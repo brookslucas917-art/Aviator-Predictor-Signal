@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Aviator Signals Hub</title>
+
+  <script src="https://js.paystack.co/v1/inline.js"></script>
+
+  <style>
+    body {
+      font-family: Arial;
+      margin: 0;
+      background: #0c0c0c;
+      color: white;
+      text-align: center;
+    }
+
+    header {
+      background: linear-gradient(90deg, black, red);
+      padding: 20px;
+      box-shadow: 0 0 20px red;
+    }
+
+    .logo {
+      font-size: 30px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: red;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    .plans {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .box {
+      background: #1a1a1a;
+      padding: 20px;
+      margin: 15px;
+      width: 260px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255,0,0,0.3);
+    }
+
+    .price {
+      font-size: 22px;
+      margin: 10px 0;
+      color: limegreen;
+      font-weight: bold;
+    }
+
+    button {
+      background: limegreen;
+      border: none;
+      padding: 12px;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      width: 100%;
+    }
+
+    button:hover {
+      background: green;
+    }
+
+    .highlight {
+      border: 2px solid red;
+      transform: scale(1.05);
+    }
+
+    .timer {
+      font-size: 20px;
+      color: yellow;
+      margin-top: 10px;
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 12px;
+      opacity: 0.7;
+    }
+
+    /* NEW SECTIONS STYLE */
+    .section {
+      margin-top: 30px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">
+    ✈️ <span>AVIATOR</span> SIGNALS
+  </div>
+  <p>Smart Predictions • Play Responsibly</p>
+
+  <div class="timer">
+    ⏳ Offer ends in: <span id="countdown"></span>
+  </div>
+</header>
+
+<div class="container">
+
+  <h2>Choose Your Plan</h2>
+
+  <div class="plans">
+
+    <!-- BASIC -->
+    <div class="box">
+      <h3>Basic Plan</h3>
+      <p class="price">GHS 200</p>
+      <p>✔ Limited Signals</p>
+      <p>✔ Basic Tips</p>
+      <button onclick="payAndRedirect(20000, 'https://paystack.com/buy/subscription-for-one-month-wspzfu')">Get Started</button>
+    </div>
+
+    <!-- VIP -->
+    <div class="box highlight">
+      <h3>VIP Plan ⭐</h3>
+      <p class="price">GHS 550</p>
+      <p>✔ Daily Signals</p>
+      <p>✔ Strategy Guide</p>
+      <p>✔ WhatsApp Group Access</p>
+      <button onclick="payAndRedirect(55000, 'https://chat.whatsapp.com/DldPyZyEF1c6anF9TRFiVC')">Join VIP</button>
+    </div>
+
+    <!-- PREMIUM -->
+    <div class="box">
+      <h3>Premium Plan</h3>
+      <p class="price">GHS 1050</p>
+      <p>✔ Full Signals Access</p>
+      <p>✔ Advanced Strategy</p>
+      <p>✔ Priority Support</p>
+      <button onclick="payAndRedirect(105000, 'https://1wrktb.com/casino/play/v_spribe:aviator?sub1=cabinetNEW&sub2=zlv2Qy&sub3=pnz60uu7')">Go Premium</button>
+    </div>
+
+  </div>
+
+  <!-- ✅ RECENT RESULTS -->
+  <div class="section">
+    <div class="box">
+      <h3>Recent Results</h3>
+      <p>✔ 21.0x | 1.54x | 1.86x</p>
+      <p>✔ 87.21x | 6.47x | 14.96x</p>
+      <p>✔ 5.01x | 10.3x | 33.7x</p>
+      <p style="color:#1eff00;">Updated regularly</p>
+    </div>
+  </div>
+
+  <!-- ✅ WHY CHOOSE US -->
+  <div class="section">
+    <div class="box">
+      <h3>Why Choose Us</h3>
+      <p>✔ Tested Strategies</p>
+      <p>✔ Fast Support</p>
+      <p>✔ Active Community</p>
+    </div>
+  </div>
+
+  <!-- ✅ CONTACT -->
+  <div class="section">
+    <div class="box">
+      <h3>Contact</h3>
+      <p>WhatsApp: 0535814854</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  ⚠️ Disclaimer: This service is for informational purposes only. Results are not guaranteed.
+</div>
+
+<script>
+
+// 🔥 YOUR ORIGINAL FUNCTION (UNCHANGED)
+function payAndRedirect(amount, redirectUrl) {
+  let handler = PaystackPop.setup({
+    key: 'pk_test_63954876671ad66470303b82145f9d22d36ec755',
+    email: 'predictionhackaviator@gmail.com',
+    amount: amount,
+    currency: "GHS",
+
+    callback: function(response){
+      alert("Payment successful!");
+      window.location.href = redirectUrl;
+    },
+
+    onClose: function(){
+      alert("Transaction cancelled");
+    }
+  });
+
+  handler.openIframe();
+}
+
+// TIMER (UNCHANGED)
+let end = new Date().getTime() + (6 * 60 * 60 * 1000);
+
+setInterval(function(){
+  let now = new Date().getTime();
+  let d = end - now;
+
+  let h = Math.floor(d/(1000*60*60));
+  let m = Math.floor((d%(1000*60*60))/(1000*60));
+  let s = Math.floor((d%(1000*60))/1000);
+
+  document.getElementById("countdown").innerHTML = h+"h "+m+"m "+s+"s";
+},1000);
+
+</script>
+
+</body>
+</html>
